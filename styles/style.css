@@ -4,10 +4,19 @@ body{
 }
 
 header{
-    background-color: #FFF;
-    color: black;
+    background-color: #15abf5;
+
+    color: white;
     font-size: 90%;
     padding: 5px 5px 5px 5px; 
+    border-radius: 10px;
+    text-align: center;
+}
+footer {
+    background-color: #15abf5;
+    color: white;
+    font-size: 90%;
+    padding: 5px 5px 5px 5px;
     border-radius: 10px;
     text-align: center;
 }
