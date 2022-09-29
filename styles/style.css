@@ -170,3 +170,30 @@ main{
 .menu-right {
     float: right;
 }
+
+/* Account Summary*/
+
+.content 
+{
+  text-align: left;
+  margin-left: 40px;
+  width: 100%;
+}
+.balance-info{
+  margin: 40px; 
+  width: fit-content; 
+  background-color: #e7e7e7;
+  padding: 20px;
+}
+.balance-info h3{
+  display: inline-block;
+  width: 200px;
+
+}
+.balance-info p{
+  display: inline-block;
+  width: 200px;
+
+
+
+}
