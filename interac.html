@@ -3,6 +3,7 @@
     <head>
         <title>Interac E-Transfer</title>
         <link rel="stylesheet" href="styles/interacstyle.css">
+        <script src="scripts/interacscript.js"></script>
     </head>
     <body>
         <main>
@@ -20,8 +21,8 @@
             <label>Security Answer:</label>
             <input type = "text" name="secA" title="secA"> <br>
             <label>Amount:</label>
-            <input type = "text" name="amount" title="amount"> <br>
-            <input type = "submit" text = "Submit">
+            <input type = "text" name="amount" title="amount" id="amount"> <br>
+            <input type = "submit" text = "Submit" onclick="onsubmitClick()">
         </main>
     </body>
 </html>
