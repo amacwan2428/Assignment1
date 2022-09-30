@@ -77,3 +77,13 @@ label{
     font-weight: bold;
     
 }
+.logo{
+  text-align: left;
+
+}
+
+.logo h3,img{
+  display: inline-block;
+  margin: 10px;
+  vertical-align:middle;
+}
