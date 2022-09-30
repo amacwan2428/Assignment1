@@ -202,7 +202,14 @@ main{
 .balance-info p{
   display: inline-block;
   width: 200px;
+}
 
+.logo{
+  text-align: left;
 
-
+}
+.logo h3,img{
+    display: inline-block;
+    margin: 10px;
+    vertical-align:middle;
 }
