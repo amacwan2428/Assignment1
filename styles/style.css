@@ -195,8 +195,8 @@ main{
 .content 
 {
   text-align: left;
-  margin-left: 40px;
-  width: 100%;
+  /*margin-left: 40px;
+  width: 100%;*/
 }
 .balance-info{
   margin: 40px; 

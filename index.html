@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head >
-        
-        <title>Bank Name</title>
+
+    <head>
+        <title>Login</title>
         <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <script src="scripts/login.js"></script>
     </head>
-    <body>
-        <header class = "logo">
-            <img src="images/bank_logo.png" alt = "bank logo" width="100px" >
-            <h3>Waterloo Bank</h3>
-        </header>
-        <nav class="menu">
-
-            <a href="index.html">Home</a>
-            <a href="accountSummary.html">Account Summary</a>
-            <a href="customerInfo.html">Customer Info</a>
-            <a href="interac.html">Interac e-Transfer</a>
-            <div class="menu-right">
-                <a href="login.html">Logout</a>
-            </div>
-
-        </nav>
-        <main>
-            <div class="row2">
-                <div>
-                    <h3>Welcome to Bank Name</h3>
-                </div>
-            </div>
-        </main>
-        <footer> <h3>151 conestoga street</h3></footer>
+    <body>                     
+        <main>                    
+            <div class = "error"></div>
+                <div class="login-form">
+                    <form name="loginForm" method="post">
+                        <h1>Bank Name</h1>
+                        <img src="Images/Logo.png" style="height: 100px;">
+                        <h4 id="messageLogin"></h4>                        
+                        <Strong id="loginResult" class="error"></strong>
+                        <div class="content">
+                            <div class="input-field">
+                                <input id="username" type="text" name="username" placeholder="User" autocomplete="nope">
+                            </div>
+                            <div class="input-field">
+                                <input id="password" type="password" name="password" placeholder="Password" autocomplete="new-password">
+                            </div>                        
+                        </div>
+                        <div class="action">          
+                            <input type="button" value="Login" name="submit" onclick="loginclick()">                                      
+                        </div>
+                    </form>
+                </div>                
+            </form>
+        </div>
+        </div>
+    </main>
+</body>
 
 </html>
