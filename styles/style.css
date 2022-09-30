@@ -195,15 +195,15 @@ main{
 
 .content 
 {
-  text-align: left;
+  text-align: center;
   /*margin-left: 40px;
   width: 100%;*/
 }
 .balance-info{
-  margin: 40px; 
+  margin: auto; 
   width: fit-content; 
   background-color: #e7e7e7;
-  padding: 20px;
+  padding: 5px;
 }
 .balance-info h3{
   display: inline-block;
@@ -224,5 +224,14 @@ main{
     display: inline-block;
     margin: 10px;
     vertical-align:middle;
+}
+
+label{
+  width: 200px;
+  margin: 4px;
+  display: inline-block;
+  text-align: left;
+  font-weight: bold;
+  
 }
 
