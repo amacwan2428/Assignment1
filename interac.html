@@ -3,13 +3,14 @@
     <head >
         
         <title>Bank Name</title>
-        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <link rel="stylesheet" type="text/css" href="styles/interacstyle.css">
         <script src="scripts/interacscript.js"></script>
         
 
     </head>
     <body>
-        <header>
+        <header class = "logo">
+            <img src="images/bank_logo.png" alt = "bank logo" width="100px" >
             <h3>Waterloo Bank</h3>
         </header>
         <nav class="menu">
@@ -44,8 +45,10 @@
             <input type = "text" name="secA" title="secA" id="secA"> <br>
             <div id="paySA"></div><br>
             <label>Amount:</label>
+
             <input type = "text" name="amount" title="amount" id="amount"> <br>
             <div id="payAm"></div><br>
+
             <input type = "submit" text = "Submit" onclick="onsubmitClick()">
 
         </main>
