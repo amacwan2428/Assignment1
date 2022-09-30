@@ -4,7 +4,7 @@ body{
 }
 
 header{
-    background-color: #15abf5;
+    background-color: #497872;
 
     color: white;
     font-size: 90%;
@@ -13,12 +13,13 @@ header{
     text-align: center;
 }
 footer {
-    background-color: #15abf5;
+    background-color: #497872;
     color: white;
     font-size: 90%;
     padding: 5px 5px 5px 5px;
     border-radius: 10px;
     text-align: center;
+    margin-top: 5px;
 }
 
 .error{
@@ -215,7 +216,8 @@ main{
 }
 
 .logo{
-  text-align: left;
+  text-align: center;
+  font-size: 25px;
 
 }
 .logo h3,img{
