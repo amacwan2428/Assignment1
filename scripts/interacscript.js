@@ -62,7 +62,7 @@ function onsubmitClick(){
         document.getElementById('payAm').innerHTML = "";
         e6 = 0;
     }
-    if(e1 == 0 && e1 == 0 && e1 == 0 && e1 == 0 && e1 == 0 && e1 == 0 ){
+    if(e1 == 0 && e2 == 0 && e3 == 0 && e4 == 0 && e5 == 0 && e6 == 0 ){
         if(checking_am < intamt ){
             window.alert("Not enough balance");
       } else {
