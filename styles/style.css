@@ -21,6 +21,10 @@ footer {
     text-align: center;
 }
 
+.error{
+  color: red;
+}
+
 main{
   
     padding: 10px;
@@ -49,9 +53,15 @@ main{
   }
   
   .login-form h1 {
-    padding: 35px 35px 0 35px;
+    padding: 0px 0px 0 0px;
     font-weight: 300;
   }
+
+  .login-form h4 {
+    padding: 0px 0px 0 0px;    
+  }
+
+  
   
   .login-form .content {
     padding: 35px;
