@@ -1,5 +1,47 @@
 <?php 
-session_start()
+session_start();
+$nameVar = $emailVar = $phoneVar = $secQVar = $secAVar = $amtVar = "";
+$err1 = $err2 = $err3 = $err4 = $err5 = $err6 = ""; 
+if(isset($_POST['submit'])){
+    echo 'Welcome';
+
+    if(empty($_POST['payeename'])){
+        $err1 = 'enter name';
+    }else{
+        $err1 = "";
+        $nameVar = $_POST['payeename'];
+    }
+    if(empty($_POST['payeemail'])){
+        $err2 = 'enter email';
+    }else{
+        $err2 = "";
+        $emailVar = $_POST['payeemail'];
+    }
+    if(empty($_POST['payeenumber'])){
+        $err3 = 'enter phone number';
+    }else{
+        $err3 = "";
+        $phoneVar = $_POST['payeenumber'];
+    }
+    if(empty($_POST['secQ'])){
+        $err4 = 'enter security question';
+    }else{
+        $err4 = "";
+        $secQVar= $_POST['secQ'];
+    }
+    if(empty($_POST['secA'])){
+        $err5 = 'enter security answer';
+    }else{
+        $err5 = "";
+        $secAVar = $_POST['secA'];
+    }
+    if(empty($_POST['amount'])){
+        $err6 = 'enter amount';
+    }else{
+        $err6 = "";
+        $amtVar = $_POST['amount'];
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -28,32 +70,32 @@ session_start()
 
         </nav>
         <main>
-
+            <form method="post">
             <h3>Interac E-transfer</h3> 
             <label>Checking Initial Balance:</label>
             <input type = "text" name="payeename" title="payeename" id="payeename" value="$5000" disabled> <br><br>
             <label>Payee Name:</label>
-            <input type = "text" name="payeename" title="payeename" id="payeename"> <br>
-            <div id="payN"></div><br>
+            <input type = "text" name="payeename" title="payeename" id="payeename" value="<?php echo $nameVar ?>"> <br>
+            <div id="payN"> <?php echo $err1; ?></div><br>
             <label>Payee Email:</label>
-            <input type = "text" name="payeemail" title="payeemail" id="payeeemail"> <br>
-            <div id="payE"></div><br>
+            <input type = "text" name="payeemail" title="payeemail" id="payeeemail" value="<?php echo $emailVar ?>"> <br>
+            <div id="payE"><?php echo $err2; ?></div><br>
             <label>Payee Phone Number:</label>
-            <input type = "number" name="payeenumber" title="payeenumber" id="payeenum"> <br>
-            <div id="payPN"></div><br>
+            <input type = "number" name="payeenumber" title="payeenumber" id="payeenum" value="<?php echo $phoneVar ?>"> <br>
+            <div id="payPN"><?php echo $err3; ?></div><br>
             <label>Security Question:</label>
-            <input type = "text" name="secQ" title="secQ" id="secQ"> <br>
-            <div id="paySQ"></div><br>
+            <input type = "text" name="secQ" title="secQ" id="secQ" value="<?php echo $secQVar ?>"> <br>
+            <div id="paySQ"><?php echo $err4; ?></div><br>
             <label>Security Answer:</label>
-            <input type = "text" name="secA" title="secA" id="secA"> <br>
-            <div id="paySA"></div><br>
+            <input type = "text" name="secA" title="secA" id="secA" value="<?php echo $secAVar ?>"> <br>
+            <div id="paySA"><?php echo $err5; ?></div><br>
             <label>Amount:</label>
 
-            <input type = "number" name="amount" title="amount" id="amount"> <br>
-            <div id="payAm"></div><br>
+            <input type = "number" name="amount" title="amount" id="amount" value="<?php echo $amtVar ?>"> <br>
+            <div id="payAm"><?php echo $err6; ?></div><br>
 
-            <input type = "submit" text = "Submit" onclick="onsubmitClick()">
-
+            <input type = "submit" text = "Submit"  name="submit">
+</form>
         </main>
 
         <footer> <h4>Call us - (563)0001111</h4>
