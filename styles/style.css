@@ -239,3 +239,33 @@ label{
 footer h3{
   text-align: left;
 }
+
+
+
+
+.accountsTable{
+  border-collapse: collapse;
+  margin: 25px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.accountsTable thead tr {
+  background-color: #008998;
+  text-align: left;
+}
+.accountsTable th
+{
+  color: #ffffff;
+  padding: 20px;
+}
+
+
+.accountsTable tbody tr {
+  background-color: #ffffff;
+}
+
+.accountsTable tbody tr:nth-child(even) {
+  background-color:#b9d8d2;
+}
+.accountsTable td {
+  padding: 20px;
+}
