@@ -12,11 +12,11 @@
         </header>
     <nav class="menu">                           
             
-        <a href="accountSummary.html">Account Summary</a>
-        <a href="customerInfo.html">Customer Info</a>
-        <a href="interac.html">Interac e-Transfer</a>        
+        <a href="accountSummary.php">Account Summary</a>
+        <a href="customerInfo.php">Customer Info</a>
+        <a href="interac.php">Interac e-Transfer</a>        
         <div class="menu-right">
-          <a href="index.html">Logout</a>    
+          <a href="index.php">Logout</a>    
         </div>
           
       </nav>
