@@ -269,3 +269,9 @@ footer h3{
 .accountsTable td {
   padding: 20px;
 }
+
+.err{
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+}
