@@ -1,6 +1,5 @@
 <?php
-    session_start();    
-    session_destroy();
+    session_start();        
     $errorM = "";
     
     include('includes/db_connection.php');
