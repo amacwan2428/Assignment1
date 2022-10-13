@@ -74,16 +74,25 @@ function alert($msg) {
             <img src="images/bank_logo.png" alt = "bank logo" width="100px" >
             <h3>Waterloo Bank</h3>
         </header>
-        <nav class="menu">
-            
-            <a href="accountSummary.html">Account Summary</a>
-            <a href="customerInfo.html">Customer Info</a>
-            <a href="interac.html">Interac e-Transfer</a>
+        <nav class="menu">                                   
+            <a href="accountSummary.php">Account Summary</a>
+            <a href="customerInfo.php">Customer Info</a>
+            <a href="interac.php">Interac e-Transfer</a>      
+            <a href="index.php">Logout</a>     
             <div class="menu-right">
-                <a href="index.html">Logout</a>
-            </div>
-
+                <a href="#">
+                    <?php  
+                        if(isset($_SESSION['isLoggedIn']) )   {
+                            
+                        echo "Welcome, " . $_SESSION['user']['userName'];
+                        }else{
+                        echo "Unauthenticated user";
+                        }
+                        ?>        
+                </a>           
+            </div> 
         </nav>
+
         <main>
             <form method="post">
             <h3>Interac E-transfer</h3> 
