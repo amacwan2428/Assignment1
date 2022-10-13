@@ -49,6 +49,8 @@ if(isset($_POST['submit'])){
             alert("Can't send money");
         }else{
             alert("Money Sent");
+            $amt = $amt - $amtVar;
+            echo $amt;
         }
     }
 }
