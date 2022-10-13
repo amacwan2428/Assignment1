@@ -2,6 +2,7 @@
 session_start();
 $nameVar = $emailVar = $phoneVar = $secQVar = $secAVar = $amtVar = "";
 $err1 = $err2 = $err3 = $err4 = $err5 = $err6 = ""; 
+$amt = 5000;
 if(isset($_POST['submit'])){
     echo 'Welcome';
 
@@ -41,6 +42,18 @@ if(isset($_POST['submit'])){
         $err6 = "";
         $amtVar = $_POST['amount'];
     }
+
+
+    if ($err1 == "" && $err2 == "" && $err3 == "" && $err4 == "" && $err5 == "" && $err6 == ""){
+        if($amtVar > $amt){
+            alert("Can't send money");
+        }else{
+            alert("Money Sent");
+        }
+    }
+}
+function alert($msg) {
+    echo "<script type='text/javascript'>alert('$msg');</script>";
 }
 
 ?>
