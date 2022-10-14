@@ -67,18 +67,26 @@ if(isset($_SESSION['isLoggedIn']) )   {
                     <?php
                     if(isset($client))
                     {
+                        echo '<section>';
+                            echo '<p>Name : ' . $client[0]['name'] . '</p>';
+                            echo '<p>Address:' . $client[0]['adress'] . '</p>';
+                            echo '<p>Email :' . $client[0]['email'] . '</p>';
+                            echo '<p>Phone :' . $client[0]['phone'] . '</p>';
+                            
+                        echo '</section>'; 
+
+                        echo '<section class = "balance-info" >';
+                        echo '<h3>Accounts:</h3>';
+                        echo '<br>';
                         foreach($client as $cl)
                         {
+                            echo '<p>Account Number :' . $cl['number'] . '</p>';
+                            echo '<p>Account Type :' . $cl['type'] . '</p>';
+                            echo '<br>';
 
-                                echo '<section>';
-                                
-                                echo '<p>Name : ' . $cl['name'] . '</p><br>';
-                                echo '<p>Address:' . $cl['adress'] . '</p>';
-                                echo '<p>Account Number :' . $cl['number'] . '</p>';
-                                echo '<p>Email :' . $cl['email'] . '</p>';
-                                echo '<p>Phone :' . $cl['phone'] . '</p>';
-                                echo '</section>'; 
+
                         }
+                        echo '</section>'; 
                     }
                 ?>
 
