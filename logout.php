@@ -7,7 +7,6 @@ session_destroy();
 <head>
     <meta name="viewport" content=" width=device-width, initial-scale=1.0">
     <title>Logout</title>
-    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <nav class="menu">                                   
@@ -15,18 +14,7 @@ session_destroy();
         <a href="customerInfo.php">Customer Info</a>
         <a href="interac.php">Interac e-Transfer</a>      
         <a href="logout.php">Logout</a>     
-        <div class="menu-right">
-            <a href="#">
-                <?php  
-                    if(isset($_SESSION['isLoggedIn']) )   {
-                            
-                    echo "Welcome, " . $_SESSION['user']['userName'];
-                    }else{
-                    echo "Unauthenticated user";
-                    }
-                ?>        
-            </a>           
-        </div> 
+        
     </nav>
     <main>
         <div>
