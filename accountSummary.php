@@ -14,6 +14,14 @@ if(isset($_SESSION['isLoggedIn']) )   {
     $result = $db->query($query);
     $accounts = $result->fetch_all(MYSQLI_ASSOC);
 
+    //to list transcations
+    $transcation = "SELECT etransac.* from client 
+                    inner join account on client.idclient = account.idaccount 
+                    inner join etransac on etransac.idaccount = account.idaccount 
+                    where client.userName = '$username' and type = 'savings' limit 15 ";
+    $tresult = $db->query($transcation);
+   
+
 }else{
     header('location:index.php');
 }
@@ -97,6 +105,39 @@ if(isset($_SESSION['isLoggedIn']) )   {
             </section>  
             <section class = "content">
             <h2>Transactions</h2>
+              <?php
+                    
+                         if(mysqli_num_rows($tresult) > 0){ 
+                             echo '<section class = "records">';
+                               
+
+                                
+                                 
+                                        echo "<table>";
+                                        echo "<tr>";
+                                        echo "<th>ID</th>";
+                                        echo "<th>Name</th>";
+                                        echo "<th>Email</th>";
+                                        echo "<th>Amount </th>";
+                                      
+                                        echo "</tr>";
+                                        while($row = mysqli_fetch_array($tresult)){
+                                            echo "<tr>";
+                                            echo "<td>" . $row['idETransac'] . "</td>";
+                                            echo "<td>" . $row['payeeName'] . "</td>";
+                                            echo "<td>" . $row['email'] . "</td>";
+                                            echo "<td>" . $row['amount'] . "</td>";
+
+                                            echo "</tr>";
+                                        }
+
+       
+                                        echo "</table>";
+                                        echo '</section>';
+                         }
+                       
+                    
+                    ?>
 
             </section>  
 
