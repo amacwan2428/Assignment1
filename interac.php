@@ -1,6 +1,7 @@
 <?php 
 session_start();
 $nameVar = $emailVar = $phoneVar = $secQVar = $secAVar = $amtVar = "";
+
 $err1 = $err2 = $err3 = $err4 = $err5 = $err6 = ""; 
 $amt = 5000;
 if(isset($_POST['submit'])){
@@ -50,7 +51,18 @@ if(isset($_POST['submit'])){
         }else{
             alert("Money Sent");
             $amt = $amt - $amtVar;
-            echo $amt;
+        
+
+
+            include('includes/db_connection.php');
+            $query = "insert into etransac values(NULL,'$nameVar','$emailVar','$phoneVar','$secQVar','$secAVar','$amt')";
+            $insert = mysqli_query($db,$query);
+            if($insert){
+                $correct = "Inserted in database";
+            }else{
+                echo "Error";
+            }
+            
         }
     }
 }
@@ -97,7 +109,7 @@ function alert($msg) {
             <form method="post">
             <h3>Interac E-transfer</h3> 
             <label>Checking Initial Balance:</label>
-            <input type = "text" name="payeename" title="payeename" id="payeename" value="$5000" disabled> <br><br>
+            <input type = "text" name="payeename" title="payeename" id="payeename" value="$ <?php echo $amt; ?>" disabled> <br><br>
             <label>Payee Name:</label>
             <input type = "text" name="payeename" title="payeename" id="payeename" value="<?php echo $nameVar ?>"> <br>
             <div id="payN"> <?php echo $err1; ?></div><br>
