@@ -4,7 +4,7 @@ body{
 }
 
 header{
-    background-color: #15abf5;
+    background-color: #698fa4;
 
     color: white;
     font-size: 90%;
@@ -13,12 +13,21 @@ header{
     text-align: center;
 }
 footer {
-    background-color: #15abf5;
+    background-color: #698fa4;
     color: white;
     font-size: 90%;
     padding: 5px 5px 5px 5px;
     border-radius: 10px;
     text-align: center;
+    margin-top: 5px;
+}
+
+.error{
+  color: red;
+}
+
+.greenL{
+  color: green;
 }
 
 main{
@@ -49,9 +58,15 @@ main{
   }
   
   .login-form h1 {
-    padding: 35px 35px 0 35px;
+    padding: 0px 0px 0 0px;
     font-weight: 300;
   }
+
+  .login-form h4 {
+    padding: 0px 0px 0 0px;    
+  }
+
+  
   
   .login-form .content {
     padding: 35px;
@@ -184,25 +199,118 @@ main{
 
 .content 
 {
-  text-align: left;
-  margin-left: 40px;
-  width: 100%;
+  text-align: center;
+  /*margin-left: 40px;
+  width: 100%;*/
 }
 .balance-info{
-  margin: 40px; 
+  margin: auto; 
   width: fit-content; 
   background-color: #e7e7e7;
-  padding: 20px;
+  padding: 5px;
 }
 .balance-info h3{
   display: inline-block;
-  width: 200px;
+  width: 300px;
 
 }
 .balance-info p{
   display: inline-block;
+  width: 300px;
+}
+
+
+
+.idcenter{
+    text-align:center;
+}
+
+.records {
+    margin: auto;
+    width: fit-content;
+    background-color: #e7e7e7;
+    padding: 5px;
+    border-collapse: collapse;
+    
+}
+
+    .records td, .records th {
+        border: 2px solid;
+        border-color: black;
+        padding: 7px 13px;
+    }
+
+        
+        .records td {
+            color: black;
+            font-family: cursive;
+            font-weight: normal;
+            background-color: #e7e7e7;
+        }
+
+        .records th {
+            color: black;
+            font-weight: bold;
+            background-color: #e7e7e7;
+        }
+
+.logo{
+  text-align: center;
+  font-size: 25px;
+
+}
+.logo h3,img{
+    display: inline-block;
+    margin: 10px;
+    vertical-align:middle;
+}
+
+label{
   width: 200px;
+  margin: 4px;
+  display: inline-block;
+  text-align: left;
+  font-weight: bold;
+  
+}
+
+/* footer*/
+footer h3{
+  text-align: left;
+}
 
 
 
+
+.accountsTable{
+  border-collapse: collapse;
+  margin: 25px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.accountsTable thead tr {
+  background-color: #008998;
+  text-align: left;
+}
+.accountsTable th
+{
+  color: #ffffff;
+  padding: 20px;
+}
+
+
+.accountsTable tbody tr {
+  background-color: #ffffff;
+}
+
+.accountsTable tbody tr:nth-child(even) {
+  background-color:#b9d8d2;
+}
+.accountsTable td {
+  padding: 20px;
+}
+
+.err{
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
 }
