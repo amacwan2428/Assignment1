@@ -1,11 +1,15 @@
 <?php 
 session_start();
+include('includes/db_connection.php');
 $nameVar = $emailVar = $phoneVar = $secQVar = $secAVar = $amtVar = "";
+$balanceGlobal = 0;
+$idAccountGlobal = 0;
 
-$err1 = $err2 = $err3 = $err4 = $err5 = $err6 = ""; 
-$amt = 5000;
+$err1 = $err2 = $err3 = $err4 = $err5 = $err6 = $err7 = $correct = ""; 
+
 if(isset($_POST['submit'])){
-    echo 'Welcome';
+        
+    
 
     if(empty($_POST['payeename'])){
         $err1 = 'enter name';
@@ -44,23 +48,27 @@ if(isset($_POST['submit'])){
         $amtVar = $_POST['amount'];
     }
 
+    $amt = $_POST['balanceGlob'];
+
 
     if ($err1 == "" && $err2 == "" && $err3 == "" && $err4 == "" && $err5 == "" && $err6 == ""){
         if($amtVar > $amt){
-            alert("Can't send money");
+            $err7 = "insufficient balance";
         }else{
-            alert("Money Sent");
-            $amt = $amt - $amtVar;
+            $err7 = "";                      
         
-
-
-            include('includes/db_connection.php');
-            $query = "insert into etransac values(NULL,'$nameVar','$emailVar','$phoneVar','$secQVar','$secAVar','$amt')";
+            $tidAccount = $_POST['tidAccount'];
+            
+            
+            $query = "insert into etransac values(0,'$tidAccount','$nameVar','$emailVar','$phoneVar','$secQVar','$secAVar','$amtVar')";
             $insert = mysqli_query($db,$query);
             if($insert){
-                $correct = "Inserted in database";
+                $correct = "Money send";
+                $err7 = "";
+                $nameVar = $emailVar = $phoneVar = $secQVar = $secAVar = $amtVar = "";
             }else{
-                echo "Error";
+                $err7 =  "Error";
+                $correct = "";
             }
             
         }
@@ -108,29 +116,45 @@ function alert($msg) {
         <main>
             <form method="post">
             <h3>Interac E-transfer</h3> 
+            <div class = "error" id="payAm"><?php echo $err7; ?></div><br>
             <label>Checking Initial Balance:</label>
-            <input type = "text" name="payeename" title="payeename" id="payeename" value="$ <?php echo $amt; ?>" disabled> <br><br>
+            <?php
+
+                $idclient = $_SESSION['user']['idclient'];                
+                $query = "SELECT balance,idaccount FROM account where idclient = '$idclient' and type = 'SAVINGS'";
+                $result = $db->query($query);
+                $row = $result->fetch_assoc();
+
+                if($row){
+                    $balanceGlobal = $row['balance'];
+                    $idAccountGlobal = $row['idaccount'];
+                }
+            ?>
+            <input type="hidden" id="tidAccount" name="tidAccount" value="<?php echo $idAccountGlobal ?>">
+            <input type="hidden" id="balanceGlob" name="balanceGlob" value="<?php echo $balanceGlobal ?>">
+            <input type = "text" name="balanceGlobT" title="balanceGlobT" id="balanceGlobT" value="$ <?php echo $balanceGlobal; ?>" disabled> <br><br>
             <label>Payee Name:</label>
             <input type = "text" name="payeename" title="payeename" id="payeename" value="<?php echo $nameVar ?>"> <br>
-            <div id="payN"> <?php echo $err1; ?></div><br>
+            <div class = "error" id="payN"> <?php echo $err1; ?></div><br>
             <label>Payee Email:</label>
             <input type = "text" name="payeemail" title="payeemail" id="payeeemail" value="<?php echo $emailVar ?>"> <br>
-            <div id="payE"><?php echo $err2; ?></div><br>
+            <div class = "error" id="payE"><?php echo $err2; ?></div><br>
             <label>Payee Phone Number:</label>
             <input type = "number" name="payeenumber" title="payeenumber" id="payeenum" value="<?php echo $phoneVar ?>"> <br>
-            <div id="payPN"><?php echo $err3; ?></div><br>
+            <div class = "error" id="payPN"><?php echo $err3; ?></div><br>
             <label>Security Question:</label>
             <input type = "text" name="secQ" title="secQ" id="secQ" value="<?php echo $secQVar ?>"> <br>
-            <div id="paySQ"><?php echo $err4; ?></div><br>
+            <div class = "error" id="paySQ"><?php echo $err4; ?></div><br>
             <label>Security Answer:</label>
             <input type = "text" name="secA" title="secA" id="secA" value="<?php echo $secAVar ?>"> <br>
-            <div id="paySA"><?php echo $err5; ?></div><br>
+            <div class = "error" id="paySA"><?php echo $err5; ?></div><br>
             <label>Amount:</label>
 
             <input type = "number" name="amount" title="amount" id="amount" value="<?php echo $amtVar ?>"> <br>
-            <div id="payAm"><?php echo $err6; ?></div><br>
+            <div class = "error" id="payAm"><?php echo $err6; ?></div><br>
 
-            <input type = "submit" text = "Submit"  name="submit">
+            <input type = "submit" text = "Submit"  name="submit"><br>
+            <div class = "greenL" id="payAm"><?php echo $correct; ?></div>
 </form>
         </main>
 
