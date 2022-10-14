@@ -10,7 +10,8 @@ if(isset($_SESSION['isLoggedIn']) )   {
     $idclient = $_SESSION['user']['idclient'];
 
     // Select accounts from db
-    $query = "SELECT * from client as c, account as a where c.idclient = '$idclient' ";
+    $query = "SELECT * from client as c inner join account as a 
+    on c.idclient = a.idclient where c.idclient = '$idclient' ";
     $result = $db->query($query);
     $client = $result->fetch_all(MYSQLI_ASSOC);
 
