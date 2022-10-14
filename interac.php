@@ -78,7 +78,7 @@ function alert($msg) {
             <a href="accountSummary.php">Account Summary</a>
             <a href="customerInfo.php">Customer Info</a>
             <a href="interac.php">Interac e-Transfer</a>      
-            <a href="index.php">Logout</a>     
+            <a href="logout.php">Logout</a>     
             <div class="menu-right">
                 <a href="#">
                     <?php  

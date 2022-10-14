@@ -37,22 +37,23 @@ if(isset($_SESSION['isLoggedIn']) )   {
     </header>
 
     <nav class="menu">                                   
-        <a href="accountSummary.php">Account Summary</a>
-        <a href="customerInfo.php">Customer Info</a>
-        <a href="interac.php">Interac e-Transfer</a>      
-        <a href="index.php">Logout</a>     
-        <div class="menu-right">
-            <a href="#">
-                <?php  
-                    if(isset($_SESSION['isLoggedIn']) )   
-                    {
-                        
+            <a href="accountSummary.php">Account Summary</a>
+            <a href="customerInfo.php">Customer Info</a>
+            <a href="interac.php">Interac e-Transfer</a>      
+            <a href="logout.php">Logout</a>     
+            <div class="menu-right">
+                <a href="#">
+                    <?php  
+                        if(isset($_SESSION['isLoggedIn']) )   {
+                            
                         echo "Welcome, " . $_SESSION['user']['userName'];
-                    }
-                    ?>        
-            </a>           
-        </div> 
-      </nav>
+                        }else{
+                        echo "Unauthenticated user";
+                        }
+                        ?>        
+                </a>           
+            </div> 
+    </nav>
 
     <main >    
         
@@ -96,7 +97,7 @@ if(isset($_SESSION['isLoggedIn']) )   {
             </section>  
             <section class = "content">
             <h2>Transactions</h2>
-            
+
             </section>  
 
     </main>
