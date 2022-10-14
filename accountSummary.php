@@ -16,9 +16,9 @@ if(isset($_SESSION['isLoggedIn']) )   {
 
     //to list transcations
     $transcation = "SELECT etransac.* from client 
-                    inner join account on client.idclient = account.idaccount 
+                    inner join account on client.idclient = account.idclient 
                     inner join etransac on etransac.idaccount = account.idaccount 
-                    where client.userName = '$username' and type = 'savings' limit 15 ";
+                    where client.idclient = '$idclient' and type = 'savings' limit 15 ";
     $tresult = $db->query($transcation);
    
 
