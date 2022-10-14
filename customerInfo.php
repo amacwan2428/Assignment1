@@ -1,3 +1,24 @@
+<?php
+session_start();
+include('includes/db_connection.php');
+
+// Check user logged in
+if(isset($_SESSION['isLoggedIn']) )   {
+    // Store username
+    $username = $_SESSION['user']['userName'];
+    // Store idclient
+    $idclient = $_SESSION['user']['idclient'];
+
+    // Select accounts from db
+    $query = "SELECT * from client as c, account as a where c.idclient = '$idclient' ";
+    $result = $db->query($query);
+    $client = $result->fetch_all(MYSQLI_ASSOC);
+
+}else{
+    header('location:index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head >
@@ -37,10 +58,30 @@
                 <h3>Customer Information</h3>  
                 <div class="c_info">
                     <img src="images/customer.png" alt="This is customer's pic" width="200" height="200" />
-                    <p>Name : Joy Smith</p>
+                    <!--<p>Name : Joy Smith</p>
                     <p>Address : 1326, broken oak, Waterloo On, N2N1N7</p>
                     <p>Phone :8899889898</p>
-                    <p>Email : joysmith@gmail.com</p>
+                    <p>Email : joysmith@gmail.com</p>-->
+
+                    <?php
+                    if(isset($client))
+                    {
+                        foreach($client as $cl)
+                        {
+                           // if($cl['idclient'] == $_SESSION['idclient'])
+                            //{
+                                echo '<section class = "balance-info">';
+                                
+                                echo '<p>Name : ' . $cl['name'] . '</p><br>';
+                                echo '<p>Address:' . $cl['adress'] . '</p>';
+                                echo '<p>Account Number :' . $cl['number'] . '</p>';
+                                echo '<p>Email :' . $cl['email'] . '</p>';
+                                echo '<p>Phone :' . $cl['phone'] . '</p>';
+                                echo '</section>'; 
+                           // }
+                        }
+                    }
+                ?>
 
                    
                 </div>
