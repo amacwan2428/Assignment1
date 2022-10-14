@@ -26,6 +26,9 @@
             $errorM = "The username/password is incorrect";
         }
     }
+    if(isset($_POST['Create'])){
+        header("Location:  createAccount.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -54,9 +57,9 @@
                                 <input id="password" type="password" name="password" placeholder="Password" autocomplete="new-password">
                             </div>                        
                         </div>
-                        <div class="action">          
-                            <!--<input type="button" value="Login" name="submit" onclick="loginclick()">       -->   
-                            <input type="submit" value="Login" name="submit">                               
+                        <div class="action">                               
+                            <input type="submit" value="Login" name="submit">       
+                            <input type="submit" value="Create Account" name="Create">                          
                         </div>
                     </form>
                 </div>                            

@@ -58,3 +58,16 @@ begin
 END;
 $$
 DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER client_trig
+AFTER INSERT ON `client` FOR EACH ROW
+begin
+
+       insert into account
+       values(0,NEW.idclient,0,NEW.idclient,'savings',0);
+       
+       
+END;
+$$
+DELIMITER ;
