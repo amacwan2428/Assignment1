@@ -69,9 +69,8 @@ if(isset($_SESSION['isLoggedIn']) )   {
                     {
                         foreach($client as $cl)
                         {
-                           // if($cl['idclient'] == $_SESSION['idclient'])
-                            //{
-                                echo '<section class = "balance-info">';
+
+                                echo '<section>';
                                 
                                 echo '<p>Name : ' . $cl['name'] . '</p><br>';
                                 echo '<p>Address:' . $cl['adress'] . '</p>';
@@ -79,7 +78,6 @@ if(isset($_SESSION['isLoggedIn']) )   {
                                 echo '<p>Email :' . $cl['email'] . '</p>';
                                 echo '<p>Phone :' . $cl['phone'] . '</p>';
                                 echo '</section>'; 
-                           // }
                         }
                     }
                 ?>
