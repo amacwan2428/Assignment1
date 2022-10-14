@@ -6,9 +6,14 @@ session_destroy();
 <html>
 <head>
     <meta name="viewport" content=" width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
     <title>Logout</title>
 </head>
 <body>
+    <header class = "logo">
+        <img src="images/bank_logo.png" alt = "bank logo" width="100px" >
+        <h3>Waterloo Bank</h3>
+    </header>
     <nav class="menu">                                   
         <a href="accountSummary.php">Account Summary</a>
         <a href="customerInfo.php">Customer Info</a>
